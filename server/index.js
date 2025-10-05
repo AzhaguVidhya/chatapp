@@ -5,9 +5,13 @@ const userRoute=require("./Routes/userRoute");
 const chatRoute=require("./Routes/chatRoute");
 const messageRoute=require("./Routes/messageRoute");
 const app = express();
+const http = require('http').createServer(app);
+const PORT = process.env.PORT || 5000;
+http.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server listening on port ${PORT}`);
+});
 require("dotenv").config();
 app.use(express.json());
-
 app.use(cors());
 app.use("/api/users",userRoute);
 app.use("/api/chats",chatRoute);
