@@ -5,6 +5,7 @@ const userRoute = require("./Routes/userRoute");
 const chatRoute = require("./Routes/chatRoute");
 const messageRoute = require("./Routes/messageRoute");
 require("dotenv").config();
+const uri = process.env.ATLAS_URI;
 
 const app = express();
 const http = require("http").createServer(app);
